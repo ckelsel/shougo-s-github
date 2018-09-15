@@ -1493,43 +1493,9 @@ function! bundle.hooks.on_source(bundle)
     "inoremap <silent><buffer><expr> <Up>
     "      \ vimshell#term_mappings#send_keys("\<ESC>[A")
 
-    " Sticky key.
-    imap <buffer><expr> ;  <SID>texe_sticky_func()
-
     " Escape key.
     iunmap <buffer> <ESC><ESC>
     imap <buffer> <ESC>         <Plug>(vimshell_term_send_escape)
-  endfunction
-  function! s:texe_sticky_func()
-    let sticky_table = {
-          \',' : '<', '.' : '>', '/' : '?',
-          \'1' : '!', '2' : '@', '3' : '#', '4' : '$', '5' : '%',
-          \'6' : '^', '7' : '&', '8' : '*', '9' : '(', '0' : ')', '-' : '_', '=' : '+',
-          \';' : ':', '[' : '{', ']' : '}', '`' : '~', "'" : "\"", '\' : '|',
-          \}
-    let special_table = {
-          \ "\<ESC>" : "\<ESC>", "\<CR>" : ";\<CR>"
-          \ "\<Space>" : "\<Plug>(vimshell_term_send_semicolon)",
-          \}
-
-    if mode() !~# '^c'
-      echo 'Input sticky key: '
-    endif
-    let char = ''
-
-    while char == ''
-      let char = nr2char(getchar())
-    endwhile
-
-    if char =~ '\l'
-      return toupper(char)
-    elseif has_key(sticky_table, char)
-      return sticky_table[char]
-    elseif has_key(special_table, char)
-      return special_table[char]
-    else
-      return ''
-    endif
   endfunction
 
   let s:vimshell_hooks = {}
@@ -2906,43 +2872,6 @@ noremap [Space]gg :<C-u>echo FoldCCnavi()<CR>
 " Substitute.
 xnoremap s :s//g<Left><Left>
 
-" Sticky shift in English keyboard."{{{
-" Sticky key.
-inoremap <expr> ;  <SID>sticky_func()
-cnoremap <expr> ;  <SID>sticky_func()
-snoremap <expr> ;  <SID>sticky_func()
-
-function! s:sticky_func()
-  let sticky_table = {
-        \',' : '<', '.' : '>', '/' : '?',
-        \'1' : '!', '2' : '@', '3' : '#', '4' : '$', '5' : '%',
-        \'6' : '^', '7' : '&', '8' : '*', '9' : '(', '0' : ')', '-' : '_', '=' : '+',
-        \';' : ':', '[' : '{', ']' : '}', '`' : '~', "'" : "\"", '\' : '|',
-        \}
-  let special_table = {
-        \"\<ESC>" : "\<ESC>", "\<Space>" : ';', "\<CR>" : ";\<CR>"
-        \}
-
-  if mode() !~# '^c'
-    echo 'Input sticky key: '
-  endif
-  let char = ''
-
-  while char == ''
-    let char = nr2char(getchar())
-  endwhile
-
-  if char =~ '\l'
-    return toupper(char)
-  elseif has_key(sticky_table, char)
-    return sticky_table[char]
-  elseif has_key(special_table, char)
-    return special_table[char]
-  else
-    return ''
-  endif
-endfunction
-"}}}
 
 " Easy escape."{{{
 inoremap jj           <ESC>
