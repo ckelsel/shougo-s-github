@@ -484,10 +484,10 @@ NeoBundleLazy 'thinca/vim-ft-diff_fold', { 'autoload' : {
 NeoBundleLazy 'thinca/vim-ft-markdown_fold', { 'autoload' : {
       \ 'filetypes' : 'markdown'
       \ }}
-NeoBundleLazy 'teramako/jscomplete-vim', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript'
-      \ }}
+"NeoBundleLazy 'teramako/jscomplete-vim', {
+      "\ 'autoload' : {
+      "\   'filetypes' : 'javascript'
+      "\ }}
 NeoBundleLazy 'thinca/vim-ft-help_fold', {
       \ 'autoload' : {
       \   'filetypes' : 'help'
