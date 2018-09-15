@@ -1,5 +1,6 @@
 "---------------------------------------------------------------------------
-" Shougo's .vimrc
+" ckelsel's .vimrc
+" base on Shougo's .vimrc
 "---------------------------------------------------------------------------
 " Initialize:"{{{
 "
@@ -702,15 +703,15 @@ set wrapscan
 "
 
 " Smart insert tab setting.
-set smarttab
+"set smarttab
 " Exchange tab to spaces.
 set expandtab
 " Substitute <Tab> with blanks.
-"set tabstop=8
+set tabstop=4
 " Spaces instead <Tab>.
-"set softtabstop=4
+set softtabstop=4
 " Autoindent width.
-"set shiftwidth=4
+set shiftwidth=4
 " Round indent by shiftwidth.
 set shiftround
 
