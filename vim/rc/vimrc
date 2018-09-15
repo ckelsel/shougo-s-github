@@ -3003,6 +3003,9 @@ xmap <Leader>h <Plug>(operator-html-escape)
 nnoremap @@ @a
 "}}}
 
+" <Space> to command mode.
+" nnoremap <space> :
+
 " Improved increment.
 nmap <C-a> <SID>(increment)
 nmap <C-x> <SID>(decrement)
