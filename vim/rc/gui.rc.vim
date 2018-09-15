@@ -10,7 +10,7 @@ if has('win32') || has('win64')
   " For Windows.
 
   " set guifontwide=VL\ Gothic:h11
-   set guifontwide=Ricty:h12
+  " set guifontwide=Ricty:h12
 
    set guifont=Ricty:h12
   " set guifont=Courier\ New:h11
