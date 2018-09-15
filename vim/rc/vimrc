@@ -41,6 +41,7 @@ xnoremap ,  <Nop>
 if s:is_windows
   " Exchange path separator.
   set shellslash
+  let $VIMRUNTIME=expand('$VIMRUNTIME')
 endif
 
 " In Windows/Linux, take in a difference of ".vim" and "$VIM/vimfiles".
@@ -79,8 +80,8 @@ if has('vim_starting') "{{{
   if s:is_windows
     let &runtimepath = join([
           \ expand('~/.vim'),
-          \ expand('$VIM/runtime'),
-          \ expand('~/.vim/after')], ',')
+          \ expand('$VIM/vimfiles'),
+          \ expand('$VIMRUNTIME')], ',')
   endif
 
   " Load neobundle.
@@ -114,10 +115,10 @@ let g:neobundle#default_options = {
 
 " Required:
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-"call neobundle#rc(s:neobundle_dir)
-call neobundle#begin(expand('~/.vim/bundle/'))
 
+call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle.vim"{{{
+
 NeoBundleFetch 'Shougo/neobundle.vim', '', 'default'
 
 " NeoBundle 'tpope/vim-surround', {
