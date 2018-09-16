@@ -60,9 +60,9 @@ else
   " let &t_CS = "y"
 
   " Change cursor shape.
-  let &t_SI = "\<Esc>[6 q"
-  let &t_SR = "\<Esc>[4 q"
-  let &t_EI = "\<Esc>[0 q"
+  "let &t_SI = "\<Esc>[6 q"
+  "let &t_SR = "\<Esc>[4 q"
+  "let &t_EI = "\<Esc>[0 q"
 
   if exists('+confirm')
     set confirm
