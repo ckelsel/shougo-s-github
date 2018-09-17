@@ -71,9 +71,9 @@ depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_event = 'InsertCharPre'
 on_ft = 'snippet'
 hook_source = '''
-  imap <silent>L     <Plug>(neosnippet_jump_or_expand)
-  smap <silent>L     <Plug>(neosnippet_jump_or_expand)
-  xmap <silent>L     <Plug>(neosnippet_expand_target)
+  " imap <silent>L     <Plug>(neosnippet_jump_or_expand)
+  " smap <silent>L     <Plug>(neosnippet_jump_or_expand)
+  " xmap <silent>L     <Plug>(neosnippet_expand_target)
 
   let g:neosnippet#enable_snipmate_compatibility = 1
   let g:neosnippet#enable_completed_snippet = 1
@@ -268,13 +268,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'thinca/vim-qfreplace'
-on_ft = ['qf']
-hook_source = '''
-  autocmd MyAutoCmd FileType qf nnoremap <buffer> r :<C-u>Qfreplace<CR>
-'''
-
-[[plugins]]
 repo = 'thinca/vim-scouter'
 
 [[plugins]]
@@ -369,10 +362,6 @@ repo = 'aharisu/vim-gdev'
 on_ft = 'scheme'
 
 [[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
-
-[[plugins]]
 repo = 'rhysd/vim-operator-surround'
 depends = 'vim-operator-user'
 on_map = {n = '<Plug>'}
@@ -398,17 +387,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'katono/rogue.vim'
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-hook_source = '''
-let g:rustfmt_autosave = 1
-'''
-
-[[plugins]]
-repo = 'rhysd/rust-doc.vim'
-on_ft = 'rust'
 
 [[plugins]]
 repo = 'lambdalisue/vim-findent'
@@ -461,10 +439,6 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'racer-rust/vim-racer'
-on_ft = 'rust'
-
-[[plugins]]
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
@@ -475,14 +449,6 @@ on_ft = ['zsh', 'sh']
 [[plugins]]
 repo = 'Shougo/deoplete-clangx'
 on_ft = ['c', 'cpp']
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_event = 'InsertEnter'
-on_ft = 'go'
-hook_source = '''
-let g:deoplete#sources#go#source_importer = 1
-'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -498,5 +464,17 @@ repo = 'lambdalisue/suda.vim'
 on_path = 'suda://'
 
 [[plugins]]
-repo = 'uplus/deoplete-solargraph'
-on_ft = 'ruby'
+repo = 'ludovicchabant/vim-gutentags'
+hook_source = '''
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+'''
+
