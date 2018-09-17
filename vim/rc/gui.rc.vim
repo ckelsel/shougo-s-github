@@ -12,10 +12,10 @@ if has('win32') || has('win64')
   " set guifontwide=VL\ Gothic:h11
   " set guifontwide=Ricty:h12
 
-   set guifont=Ricty:h12
+  " set guifont=Ricty:h12
   " set guifont=Courier\ New:h11
   " set guifont=VL\ Gothic:h11
-  " set guifont=Consolas:h12
+  set guifont=Consolas:h12
   " set guifont=Inconsolata:h12
 
   " Number of pixel lines inserted between characters.
