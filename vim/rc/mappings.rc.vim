@@ -118,9 +118,9 @@ xnoremap s :s//g<Left><Left>
 
 " Sticky shift in English keyboard.
 " Sticky key.
-inoremap <expr> ;  vimrc#sticky_func()
-cnoremap <expr> ;  vimrc#sticky_func()
-snoremap <expr> ;  vimrc#sticky_func()
+"inoremap <expr> ;  vimrc#sticky_func()
+"cnoremap <expr> ;  vimrc#sticky_func()
+"snoremap <expr> ;  vimrc#sticky_func()
 
 " Easy escape.
 inoremap jj           <ESC>
@@ -164,5 +164,5 @@ if exists(':tnoremap')
   tnoremap   <ESC>      <C-\><C-n>
   tnoremap   jj         <C-\><C-n>
   tnoremap   j<Space>   j
-  tnoremap <expr> ;  vimrc#sticky_func()
+  "tnoremap <expr> ;  vimrc#sticky_func()
 endif
