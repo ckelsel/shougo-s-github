@@ -3,10 +3,10 @@
 "
 " The automatic recognition of the character code.
 
-" When do not include Japanese, use encoding for fileencoding.
+" When do not include Chinaese, use encoding for fileencoding.
 function! s:ReCheck_FENC() abort
   let is_multi_byte = search("[^\x01-\x7e]", 'n', 100, 100)
-  if &fileencoding =~# 'iso-2022-jp' && !is_multi_byte
+  if &fileencoding =~# 'cp936' && !is_multi_byte
     let &fileencoding = &encoding
   endif
 endfunction
@@ -27,8 +27,8 @@ command! -bang -bar -complete=file -nargs=? Utf8
 command! -bang -bar -complete=file -nargs=? Iso2022jp
       \ edit<bang> ++enc=iso-2022-jp <args>
 " Open in Shift_JIS again.
-command! -bang -bar -complete=file -nargs=? Cp932
-      \ edit<bang> ++enc=cp932 <args>
+command! -bang -bar -complete=file -nargs=? Cp936
+      \ edit<bang> ++enc=cp936 <args>
 " Open in EUC-jp again.
 command! -bang -bar -complete=file -nargs=? Euc
       \ edit<bang> ++enc=euc-jp <args>
@@ -41,7 +41,7 @@ command! -bang -bar -complete=file -nargs=? Latin
 
 " Tried to make a file note version.
 command! WUtf8 setlocal fenc=utf-8
-command! WCp932 setlocal fenc=cp932
+command! WCp936 setlocal fenc=cp936
 command! WLatin1 setlocal fenc=latin1
 
 " Appoint a line feed.

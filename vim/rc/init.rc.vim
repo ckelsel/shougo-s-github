@@ -18,7 +18,7 @@ endfunction
 " Make it normal in UTF-8 in Unix.
 if has('vim_starting') && &encoding !=# 'utf-8'
   if IsWindows() && !has('gui_running')
-    set encoding=cp932
+    set encoding=cp936
   else
     set encoding=utf-8
   endif
@@ -26,12 +26,12 @@ endif
 
 " Build encodings.
 let &fileencodings = join([
-      \ 'ucs-bom', 'iso-2022-jp-3', 'utf-8', 'euc-jp', 'cp932'])
+      \ 'cp936', 'utf-8'])
 
 " Setting of terminal encoding.
 if !has('gui_running') && IsWindows()
   " For system.
-  set termencoding=cp932
+  set termencoding=cp936
 endif
 
 if has('multi_byte_ime')
