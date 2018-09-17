@@ -57,6 +57,11 @@ if IsWindows()
    set shellslash
 endif
 
+if IsWindows()
+  " Set path for python3
+  let g:python3_host_prog = 'C:\Users\v\AppData\Local\Programs\Python\Python37-32\python.exe'
+endif
+
 let $CACHE = expand('~/.cache')
 
 if !isdirectory(expand($CACHE))
