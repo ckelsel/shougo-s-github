@@ -22,11 +22,11 @@ set wrapscan
 "
 
 " Smart insert tab setting.
-set smarttab
+" set smarttab
 " Exchange tab to spaces.
 set expandtab
 " Substitute <Tab> with blanks.
-" set tabstop=8
+set tabstop=4
 " Spaces instead <Tab>.
 " set softtabstop=4
 " Autoindent width.
@@ -176,7 +176,7 @@ set list
 if IsWindows()
    set listchars=tab:>-,trail:-,extends:>,precedes:<
 else
-   set listchars=tab:▸\ ,trail:-,extends:»,precedes:«,nbsp:%
+   set listchars=tab:鈻竆 ,trail:-,extends:禄,precedes:芦,nbsp:%
 endif
 " Always display statusline.
 set laststatus=2
@@ -328,3 +328,14 @@ endfunction
 set conceallevel=2 concealcursor=niv
 
 set colorcolumn=79
+
+function AddAstute()
+    call setline(1, "\/\/")
+    call append( 1, "\/\/  " . expand("%:t"))
+    call append( 2, "\/\/")
+    call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
+    call append( 4, "\/\/  Copyright (C) 2018 Nanjing Astute Software Technology Co., Ltd. All rights reserved.")
+    call append( 5, "\/\/")
+    call append( 6, "")
+endf
+map hsr :call AddAstute()
