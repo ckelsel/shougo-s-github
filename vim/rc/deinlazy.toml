@@ -240,7 +240,7 @@ repo = 'Shougo/neoinclude.vim'
 repo = 'Shougo/vinarise.vim'
 on_cmd = 'Vinarise'
 hook_add = '''
-let g:vinarise_enable_auto_detect = 1
+let g:vinarise_enable_auto_detect = 0
 let g:vinarise_guifont = 'Courier\ 10\ Pitch:h14'
 '''
 
