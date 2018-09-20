@@ -469,3 +469,5 @@ repo = 'octol/vim-cpp-enhanced-highlight'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 
+[[plugins]]
+repo = 'vim-scripts/a.vim'
