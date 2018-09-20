@@ -73,12 +73,12 @@ set hidden
 "  set cdpath+=~
 
 " Enable folding.
-set foldenable
-set foldmethod=indent
+" set foldenable
+" set foldmethod=indent
 " Show folding level.
-set foldcolumn=1
-set fillchars=vert:\|
-set commentstring=%s
+" set foldcolumn=1
+" set fillchars=vert:\|
+" set commentstring=%s
 
 " FastFold
 autocmd MyAutoCmd TextChangedI,TextChanged *
